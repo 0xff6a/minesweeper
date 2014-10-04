@@ -7,8 +7,8 @@ describe("Blank:", function() {
 
    describe("#display", function() {
 
-     it("should return an single space string", function() {
-       expect(blank.display()).toEqual(" ");
+     it("should return 'hidden'", function() {
+       expect(blank.display()).toEqual("hidden");
      });
   });
 });

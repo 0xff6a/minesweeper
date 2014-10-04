@@ -7,8 +7,8 @@ describe("Mine:", function() {
 
    describe("#display", function() {
    
-     it("should return a unicode bomb", function() {
-       expect(mine.display()).toEqual("💣");
+     it("should return 'hidden'", function() {
+       expect(mine.display()).toEqual("hidden");
      });
   });
 });

@@ -5,7 +5,6 @@ function Square(content_type) {
   function _factory(content_type) {
     return (new content_type);
   }
-
 };
 
 Square.prototype.isMined = function() {

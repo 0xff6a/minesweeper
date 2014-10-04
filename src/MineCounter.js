@@ -7,7 +7,6 @@ function MineCounter(neighbour_squares) {
       return square.isMined();
     }).length;
   }
-
 }
 
 MineCounter.prototype.display = function() {
