@@ -1,14 +1,21 @@
 describe("Explosion:", function() {
   var explosion;
 
-   beforeEach(function() {
-     explosion = new Explosion();
-   });
+  beforeEach(function() {
+    explosion = new Explosion();
+  });
 
-   describe("#display", function() {
+  describe("#display", function() {
    
-     it("should return a unicode bomb", function() {
-       expect(explosion.display()).toEqual("💣");
-     });
+    it("should return a unicode bomb", function() {
+      expect(explosion.display()).toEqual("💣");
+    });
+  });
+
+  describe("#reveal", function() {
+
+    it("should return itself if revealed", function() {
+      expect(explosion.reveal()).toBe(explosion);
+    });
   });
 });
