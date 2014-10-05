@@ -1,7 +1,7 @@
-function Mine() {};
+function Mine() {}
 
 Mine.inheritsFrom(HiddenContent);
 
 Mine.prototype.reveal = function() {
-  return (new Explosion);
+  return (new Explosion());
 };

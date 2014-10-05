@@ -11,5 +11,5 @@ function MineCounter(neighbour_squares) {
 MineCounter.inheritsFrom(RevealedContent);
 
 MineCounter.prototype.display = function() {
-  return (this.value == 0 ? " " : this.value.toString());
+  return (this.value === 0 ? " " : this.value.toString());
 };

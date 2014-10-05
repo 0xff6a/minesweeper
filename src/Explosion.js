@@ -1,4 +1,4 @@
-function Explosion() {};
+function Explosion() {}
 
 Explosion.inheritsFrom(RevealedContent);
 

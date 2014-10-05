@@ -1,4 +1,4 @@
-function Blank() {};
+function Blank() {}
 
 Blank.inheritsFrom(HiddenContent);
 
