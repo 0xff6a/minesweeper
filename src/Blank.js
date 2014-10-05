@@ -1,4 +1,5 @@
 function Blank() {};
+
 Blank.inheritsFrom(HiddenContent);
 
 Blank.prototype.reveal = function(neighbour_squares) {
