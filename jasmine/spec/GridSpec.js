@@ -48,17 +48,31 @@ describe("Grid:", function() {
   });
 
   describe("#reveal", function() {
-   
-    xit("should reveal the target cell only if it contains a numbered minecounter", function() {
+    
+    beforeEach( function() {
+      grid.squares[0][1].mine(Mine);
+      grid.squares[1][1].mine(Mine);
+      grid.squares[1][0].mine(Mine);
+    });
 
+    xit("should reveal the target cell only if it contains a numbered minecounter", function() {
+      grid.revealSquare(0,0);
+      expect(grid.squares[0][0].display()).toEqual("3");
+      expect(grid.squares[0][1].display()).toEqual("hidden");
+      expect(grid.squares[1][1].display()).toEqual("hidden");
+      expect(grid.squares[1][0].display()).toEqual("hidden");
     });
 
     xit("should reveal an explosion if the target cell is mined", function() {
-
+      grid.revealSquare(1,0);
+      expect(grid.squares[1][0].display()).toEqual("💣");
     });
 
     xit("should reveal the target cell and neighbours if it contains a blank minecounter", function() {
-
+      grid.revealSquare(0,3);
+      expect(grid.squares[0][3].display()).toEqual(" ");
+      expect(grid.squares[0][4].display()).toEqual(" ");
+      expect(grid.squares[1][3].display()).toEqual(" ");
     });
   });
 });

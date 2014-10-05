@@ -30,6 +30,14 @@ describe("Square:", function() {
     });
   });
 
+  describe("#mine", function() {
+
+    it("can be mined with a mine object", function() {
+      square.mine(Mine);
+      expect(square.isMined()).toBe(true);
+    });
+  });
+
   describe("#reveal", function() {
     var counter;
 
@@ -55,6 +63,18 @@ describe("Square:", function() {
       square.reveal();
       expect(square.content).toEqual(counter);
     });
+  });
+
+  describe("#isHidden", function() {
+
+    it("should know if it is hiddeb", function() {
+      expect(square.isHidden()).toBe(true);
+    }); 
+
+    it("should know if it his not hidden", function() {
+      square.reveal();
+      expect(square.isHidden()).toBe(false);
+    }); 
   });
 
   describe("#display", function() {

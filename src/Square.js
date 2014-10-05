@@ -18,8 +18,18 @@ Square.prototype.reveal = function() {
   return newContent;
 };
 
+Square.prototype.isHidden = function() {
+  return (this.content instanceof HiddenContent);
+};
+
 Square.prototype.display = function() {
   return this.content.display();
+};
+
+Square.prototype.mine = function(mineObject) {
+  this.content = new mineObject();
+
+  return this;
 };
 
 

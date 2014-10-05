@@ -36,18 +36,29 @@ Grid.prototype.getSquareNeighbours = function(row, col) {
   var grid = this,
       neighbours = [];
 
+  grid.getNeighbourAddresses(row, col).map(function(address) {
+    neighbours.push(grid.squares[address[0]][address[1]]);
+  });
+
+  return neighbours;
+};
+
+Grid.prototype.getNeighbourAddresses = function(row, col) {
+  var grid = this,
+      addresses = [];
+
   grid.SHIFT_RNG.forEach(function(row_shift) {
-    grid.SHIFT_RNG.forEach(function(col_shift) {
+   grid.SHIFT_RNG.forEach(function(col_shift) {
       var n_row = row + row_shift,
           n_col = col + col_shift;
 
       if ( grid.isOnGrid(n_row, n_col) &&  grid.isNonZeroShift(row_shift, col_shift) ) {
-        neighbours.push(grid.squares[n_row][n_col]); 
+        addresses.push([n_row, n_col]); 
       }
     });
   });
 
-  return neighbours;
+  return addresses;
 };
 
 Grid.prototype.isOnGrid = function(row, col) {
@@ -83,5 +94,25 @@ Grid.prototype.deployMineAtRandom = function(mineObject) {
 
   return true;
 };
+
+Grid.prototype.revealSquare = function(row, col) {
+
+  var revelation = this.squares[row][col].reveal();
+
+  if (revelation.display() === " ") {
+    this.revealNeighbourSquares(row, col);
+  }
+  
+  return revelation;
+};
+
+Grid.prototype.revealNeighbourSquares = function(row, col) {
+  var grid = this;
+
+  grid.getNeighbourAddresses(row, col).forEach(function(address) {
+    grid.revealSquare.apply(grid, address);
+  });
+};
+
 
 
