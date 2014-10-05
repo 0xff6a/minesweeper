@@ -96,7 +96,6 @@ Grid.prototype.deployMineAtRandom = function(mineObject) {
 };
 
 Grid.prototype.revealSquare = function(row, col) {
-
   var revelation = this.squares[row][col].reveal();
 
   if (revelation.display() === " ") {
@@ -110,11 +109,16 @@ Grid.prototype.revealNeighbourSquares = function(row, col) {
   var grid = this;
 
   grid.getNeighbourAddresses(row, col).forEach(function(address) {
-    if(grid.squares[address[0]][address[1]].isHidden()){
+    if (grid.isHiddenSquare(address)){
       grid.revealSquare.apply(grid, address);
     } 
   });
 };
+
+Grid.prototype.isHiddenSquare = function(address) {
+  return this.squares[address[0]][address[1]].isHidden();
+};
+
 
 
 
