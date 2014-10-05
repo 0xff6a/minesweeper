@@ -15,6 +15,7 @@ Next steps:
 - if cell is blank, reveal neighbours (recursively)
 - else just reveal cell
 - first cell clicked is always blank
+- creating mining function (number or density metric?)
 
 Classes:
 -------

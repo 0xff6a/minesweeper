@@ -1,17 +1,33 @@
-function Grid(size, content_type) {
-  function factory(size, content_type) {
+function Grid(sizeIn, content_type) {
+  function factory(sizeIn, content_type) {
     var result = [],
-        x,
-        y;
-    for (x = 0; x < size; x++) {
-      result[x] = [];
-      for (y = 0; y < size; y++) {
-        result[x][y] = new Square(content_type);
+        row,
+        col;
+    for (row = 0; row < sizeIn; row++) {
+      result[row] = [];
+      for (col = 0; col < sizeIn; col++) {
+        result[row][col] = new Square(content_type);
       }
     }
-    
+
     return result;
   }
 
-  this.squares = factory(size, content_type);
+  this.size = sizeIn;
+  this.squares = factory(sizeIn, content_type);
+  this.associate_neighbours();
 }
+
+Grid.prototype.associate_neighbours = function() {
+  var row,
+      col;
+  for (row = 0; row < this.size; row++) {
+    for (col = 0; col < this.size; col++)  {
+      this.squares[row][col].neighbours = this._squareNeighbours(row,col);
+    }
+  }
+};
+
+Grid.prototype._squareNeighbours = function(row, col) {
+  return [this.squares[0][1], this.squares[1][0], this.squares[1][1]];
+};

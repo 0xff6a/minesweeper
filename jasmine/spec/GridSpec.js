@@ -1,5 +1,5 @@
 describe("Grid:", function() {
-  var size = 10,
+  var size = 5,
       grid;
 
   beforeEach(function() {
@@ -19,6 +19,12 @@ describe("Grid:", function() {
         });
       }))
       .toBe(true);
+    });
+
+    it("should associate each square with its neighbours", function() {
+      var first_square = grid.squares[0][0];
+      var neighbours = [grid.squares[0][1], grid.squares[1][0], grid.squares[1][1]];
+      expect(first_square.neighbours).toEqual(neighbours);
     });
   });
 });
