@@ -3,7 +3,7 @@ describe("Grid:", function() {
       grid;
 
   beforeEach(function() {
-   grid = new Grid(size, Blank);
+   grid = new Grid(size, Square, Blank);
   });
 
   describe("initialisation", function() {
@@ -31,7 +31,7 @@ describe("Grid:", function() {
   describe("#mine", function() {
 
     xit("should fill the grid with a randomly placed set of mines", function() {
-      
+
     });
   });
 

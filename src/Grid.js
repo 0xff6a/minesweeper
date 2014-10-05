@@ -1,13 +1,13 @@
-function Grid(sizeIn, content_type) {
-  function factory(sizeIn, content_type) {
+function Grid(sizeIn, unit, default_content) {
+  function factory(sizeIn, unit, default_content) {
     var result = [],
         row,
         col;
-
+        console.log(unit);
     for (row = 0; row < sizeIn; row++) {
       result[row] = [];
       for (col = 0; col < sizeIn; col++) {
-        result[row][col] = new Square(content_type);
+        result[row][col] = new unit(default_content);
       }
     }
 
@@ -15,7 +15,7 @@ function Grid(sizeIn, content_type) {
   }
 
   this.size = sizeIn;
-  this.squares = factory(sizeIn, content_type);
+  this.squares = factory(sizeIn, unit, default_content);
   this.associate_neighbours();
 }
 
@@ -55,7 +55,7 @@ Grid.prototype.isOnGrid = function(row, col) {
 };
 
 Grid.prototype.isNonZeroShift = function(row_shift, col_shift) {
-  return !(row_shift === 0 && col_shift === 0);
+  return !(row_shift === 0 && col_shift === 0)
 };
 
 
