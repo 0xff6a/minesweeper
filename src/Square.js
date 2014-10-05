@@ -18,5 +18,9 @@ Square.prototype.reveal = function() {
   return newContent;
 };
 
+Square.prototype.display = function() {
+  return this.content.display();
+};
+
 
 

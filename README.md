@@ -7,9 +7,18 @@ This repository is a work in progress
 
 Next steps:
 
-square has reveal method
--> square.reveal()
-    -> return content.reveal()
+- Grid to create assocations between squares and neighbours on intialisation
+
+Classes:
+-------
+
+- Square: contains either a Mine or a Blank. Knows its neighbour squares
+- Grid: holds all squares. Associates squares with neighbours on intialisation
+- Mine: returns an Explosion when revealed
+- Blank: returns a MineCounter when revealed
+- Explosion: displays a bomb icon
+- MineCounter: displays number of mines in neighbouring squares
+
 
 
 

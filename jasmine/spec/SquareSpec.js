@@ -56,4 +56,17 @@ describe("Square:", function() {
       expect(square.content).toEqual(counter);
     });
   });
+
+  describe("#display", function() {
+
+    it("should return 'hidden' if the content has not been revealed", function() {
+      expect(square.display()).toEqual("hidden");
+      expect(mined.display()).toEqual("hidden");
+    });
+
+    it("should display the content if the square has been revealed", function() {
+      mined.reveal();
+      expect(mined.display()).toEqual("💣");
+    });
+  });
 });
