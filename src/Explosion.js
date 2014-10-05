@@ -1,6 +1,5 @@
 function Explosion() {};
-Explosion.prototype = new RevealedContent;
-Explosion.prototype.constructor = Explosion;
+Explosion.inheritsFrom(RevealedContent);
 
 Explosion.prototype.display = function() {
   return "💣";
