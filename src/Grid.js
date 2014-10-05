@@ -1,10 +1,15 @@
 function Grid(size, content_type) {
   function factory(size, content_type) {
-    var result = [];
-    for (var i = 0; i < size; i++) {
-      result[i] = new Square(content_type);
+    var result = [],
+        x,
+        y;
+    for (x = 0; x < size; x++) {
+      result[x] = [];
+      for (y = 0; y < size; y++) {
+        result[x][y] = new Square(content_type);
+      }
     }
-
+    
     return result;
   }
 

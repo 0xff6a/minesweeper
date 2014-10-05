@@ -13,9 +13,12 @@ describe("Grid:", function() {
     });
 
     it("should hold blank squares only", function() {
-      expect(grid.squares.every(function(square) {
-        return (square.content instanceof Blank);
-      })).toBe(true);
+      expect(grid.squares.every(function(row) {
+        return row.every(function(square) {
+          return (square.content instanceof Blank);
+        });
+      }))
+      .toBe(true);
     });
   });
 });
