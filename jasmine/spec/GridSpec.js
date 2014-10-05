@@ -1,10 +1,6 @@
 describe("Grid:", function() {
   var size = 5,
-      grid;
-
-  beforeEach(function() {
-   grid = new Grid(size, Blank);
-  });
+      grid = new Grid(size, Blank);
 
   describe("initialisation", function() {
 
