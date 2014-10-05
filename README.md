@@ -10,9 +10,14 @@ Next steps:
 - Grid to create assocations between squares and neighbours on intialisation
 - DI in grid? pass Square(Blank) as content_type?
 
+- Gameplay
+- click on cell
+- if cell is blank, reveal neighbours (recursively)
+- else just reveal cell
+- first cell clicked is always blank
+
 Classes:
 -------
-
 - Square: contains either a Mine or a Blank. Knows its neighbour squares
 - Grid: holds all squares. Associates squares with neighbours on intialisation
 - Mine: returns an Explosion when revealed
