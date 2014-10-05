@@ -1,14 +1,15 @@
 describe("Grid:", function() {
-  var grid;
+  var size = 100,
+      grid;
 
   beforeEach(function() {
-   grid = new Grid(100, Blank);
+   grid = new Grid(size, Blank);
   });
 
   describe("initialisation", function() {
 
     it("should have N blank squares, with N set on initialisation", function() {
-      expect(grid.squares.length).toEqual(100);
+      expect(grid.squares.length).toEqual(size);
     });
 
     it("should hold blank squares only", function() {

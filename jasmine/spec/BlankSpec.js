@@ -1,14 +1,23 @@
 describe("Blank:", function() {
-  var blank;
+  var blank,
+      neighbours;
 
-   beforeEach(function() {
-     blank = new Blank();
-   });
+  beforeEach(function() {
+    blank = new Blank();
+    neighbours = [new Square(Blank), new Square(Blank)];
+  });
 
-   describe("#display", function() {
+  describe("#display", function() {
 
-     it("should return 'hidden'", function() {
-       expect(blank.display()).toEqual("hidden");
-     });
+    it("should return 'hidden'", function() {
+      expect(blank.display()).toEqual("hidden");
+    });
+  });
+
+  describe("#reveal", function() {
+
+    it("should return a MineCounter when revealed", function() {
+      expect(blank.reveal(neighbours)).toEqual(new MineCounter(neighbours));
+    });
   });
 });
