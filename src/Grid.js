@@ -110,7 +110,9 @@ Grid.prototype.revealNeighbourSquares = function(row, col) {
   var grid = this;
 
   grid.getNeighbourAddresses(row, col).forEach(function(address) {
-    grid.revealSquare.apply(grid, address);
+    if(grid.squares[address[0]][address[1]].isHidden()){
+      grid.revealSquare.apply(grid, address);
+    } 
   });
 };
 

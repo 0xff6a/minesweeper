@@ -7,14 +7,10 @@ This repository is a work in progress
 
 Next steps:
 
-- DI in grid? pass Square(Blank) as content_type?
-
 - Gameplay
 - click on cell
-- if cell is blank, reveal neighbours (recursively)
-- else just reveal cell
 - first cell clicked is always blank
-- creating mining function (number or density metric?)
+
 
 Classes:
 -------
