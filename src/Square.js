@@ -1,5 +1,4 @@
 function Square(content_type) {
-  
   this.content = _factory(content_type);
 
   function _factory(content_type) {

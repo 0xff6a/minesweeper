@@ -1,1 +1,0 @@
-RevealedSquareSpec.js

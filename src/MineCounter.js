@@ -1,5 +1,4 @@
 function MineCounter(neighbour_squares) {
-  
   this.value = minesIn(neighbour_squares);
 
   function minesIn(neighbour_squares) {

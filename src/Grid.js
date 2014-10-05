@@ -1,5 +1,4 @@
 function Grid(size, content_type) {
-
   this.squares = _factory(size, content_type);
 
   function _factory(size, content_type) {
