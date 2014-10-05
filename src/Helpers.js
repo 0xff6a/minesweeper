@@ -22,4 +22,7 @@ Array.prototype.matrixLength = function() {
   return elements.sum();
 };
 
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
  

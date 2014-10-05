@@ -1,9 +1,13 @@
 function Grid(sizeIn, unit, default_content) {
+  this.size = sizeIn;
+  this.squares = factory(sizeIn, unit, default_content);
+  this.associate_neighbours();
+
   function factory(sizeIn, unit, default_content) {
     var result = [],
         row,
         col;
-        console.log(unit);
+
     for (row = 0; row < sizeIn; row++) {
       result[row] = [];
       for (col = 0; col < sizeIn; col++) {
@@ -13,13 +17,9 @@ function Grid(sizeIn, unit, default_content) {
 
     return result;
   }
-
-  this.size = sizeIn;
-  this.squares = factory(sizeIn, unit, default_content);
-  this.associate_neighbours();
 }
 
-Grid.prototype.NEIGHBOUR_RNG = [-1, 0, 1];
+Grid.prototype.SHIFT_RNG = [-1, 0, 1];
 
 Grid.prototype.associate_neighbours = function() {
   var row,
@@ -36,8 +36,8 @@ Grid.prototype.getSquareNeighbours = function(row, col) {
   var grid = this,
       neighbours = [];
 
-  grid.NEIGHBOUR_RNG.forEach(function(row_shift) {
-    grid.NEIGHBOUR_RNG.forEach(function(col_shift) {
+  grid.SHIFT_RNG.forEach(function(row_shift) {
+    grid.SHIFT_RNG.forEach(function(col_shift) {
       var n_row = row + row_shift,
           n_col = col + col_shift;
 
@@ -56,6 +56,31 @@ Grid.prototype.isOnGrid = function(row, col) {
 
 Grid.prototype.isNonZeroShift = function(row_shift, col_shift) {
   return !(row_shift === 0 && col_shift === 0)
+};
+
+Grid.prototype.deployMines = function(count, mineObject) {
+  var index = 0;
+
+  while (index < count) {
+    if (this.deployMineAtRandom(mineObject)) {
+      index++;
+    }
+  }
+};
+
+Grid.prototype.deployMineAtRandom = function(mineObject) {
+  var row = randomInt(0, this.size - 1);
+  var col = randomInt(0, this.size - 1);
+
+  target = this.squares[row][col];
+  if (target.content instanceof mineObject) {
+    return false; 
+  }
+  else {
+    target.content = new mineObject();
+  }
+
+  return true;
 };
 
 

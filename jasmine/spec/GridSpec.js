@@ -24,14 +24,26 @@ describe("Grid:", function() {
     it("should associate each square with its neighbours", function() {
       var first_square = grid.squares[0][0];
       var neighbours = [grid.squares[0][1], grid.squares[1][0], grid.squares[1][1]];
+
       expect(first_square.neighbours).toEqual(neighbours);
     });
   });
 
-  describe("#mine", function() {
+  describe("#deployMines", function() {
 
-    xit("should fill the grid with a randomly placed set of mines", function() {
-
+    it("should fill the grid with a randomly placed set of mines", function() {
+      var mineCount = 0,
+          mines = 5;
+          
+      grid.deployMines(mines, Mine);
+      grid.squares.forEach(function(row) {
+        row.forEach(function(square) {
+          if (square.content instanceof Mine) {
+            mineCount++;
+          }
+        });
+      });
+      expect(mineCount).toEqual(mines);
     });
   });
 
