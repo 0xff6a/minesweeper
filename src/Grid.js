@@ -55,7 +55,7 @@ Grid.prototype.isOnGrid = function(row, col) {
 };
 
 Grid.prototype.isNonZeroShift = function(row_shift, col_shift) {
-  return !(row_shift === 0 && col_shift === 0)
+  return !(row_shift === 0 && col_shift === 0);
 };
 
 Grid.prototype.deployMines = function(count, mineObject) {
@@ -69,8 +69,9 @@ Grid.prototype.deployMines = function(count, mineObject) {
 };
 
 Grid.prototype.deployMineAtRandom = function(mineObject) {
-  var row = randomInt(0, this.size - 1);
-  var col = randomInt(0, this.size - 1);
+  var row = randomInt(0, this.size - 1),
+      col = randomInt(0, this.size - 1),
+      target;
 
   target = this.squares[row][col];
   if (target.content instanceof mineObject) {

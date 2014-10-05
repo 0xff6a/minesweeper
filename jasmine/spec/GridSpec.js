@@ -34,7 +34,7 @@ describe("Grid:", function() {
     it("should fill the grid with a randomly placed set of mines", function() {
       var mineCount = 0,
           mines = 5;
-          
+
       grid.deployMines(mines, Mine);
       grid.squares.forEach(function(row) {
         row.forEach(function(square) {
