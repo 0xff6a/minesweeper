@@ -21,8 +21,6 @@ describe("MineCounter:", function() {
     });
 
     it("should return the number of neighbouring mines if there are any", function() {
-      var mineCounter;
-
       squares.push(new Square(Mine));
       mineCounter = new MineCounter(squares);
       

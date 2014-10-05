@@ -5,5 +5,5 @@ RevealedContent.prototype.reveal = function() {
 };
 
 RevealedContent.prototype.display = function() {
-    return this.content.display();
+  return this.content.display();
 };

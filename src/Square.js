@@ -1,10 +1,10 @@
 function Square(content_type) {
-  this.content = _factory(content_type);
-  this.neighbours = [];
-
-  function _factory(content_type) {
+  function factory(content_type) {
     return (new content_type);
   }
+  
+  this.content = factory(content_type);
+  this.neighbours = [];
 };
 
 Square.prototype.isMined = function() {
