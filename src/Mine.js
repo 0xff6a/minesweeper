@@ -1,4 +1,5 @@
 function Mine() {};
+
 Mine.inheritsFrom(HiddenContent);
 
 Mine.prototype.reveal = function() {

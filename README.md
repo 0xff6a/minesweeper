@@ -11,9 +11,6 @@ square has reveal method
 -> square.reveal()
     -> return content.reveal()
 
-content is either Mine or Blank. both have a reveal method
 
-Explosion and MineCounter inherit from revealed square
- -> return self when revealed
 
 

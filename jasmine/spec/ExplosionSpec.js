@@ -14,7 +14,7 @@ describe("Explosion:", function() {
 
   describe("#reveal", function() {
 
-    it("should return itself if revealed", function() {
+    it("should return itself when revealed", function() {
       expect(explosion.reveal()).toBe(explosion);
     });
   });

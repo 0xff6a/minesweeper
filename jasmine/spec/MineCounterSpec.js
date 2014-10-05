@@ -29,4 +29,11 @@ describe("MineCounter:", function() {
       expect(mineCounter.display()).toEqual("1");
     });
   });
+
+  describe("#reveal", function() {
+
+    it("should return itself when revealed", function() {
+      expect(mineCounter.reveal()).toBe(mineCounter);
+    });
+  });
 });
