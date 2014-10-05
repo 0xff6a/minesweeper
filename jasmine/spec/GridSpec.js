@@ -27,4 +27,26 @@ describe("Grid:", function() {
       expect(first_square.neighbours).toEqual(neighbours);
     });
   });
+
+  describe("#mine", function() {
+
+    xit("should fill the grid with a randomly placed set of mines", function() {
+      
+    });
+  });
+
+  describe("#reveal", function() {
+   
+    xit("should reveal the target cell only if it contains a numbered minecounter", function() {
+
+    });
+
+    xit("should reveal an explosion if the target cell is mined", function() {
+
+    });
+
+    xit("should reveal the target cell and neighbours if it contains a blank minecounter", function() {
+
+    });
+  });
 });

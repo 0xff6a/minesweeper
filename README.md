@@ -7,7 +7,6 @@ This repository is a work in progress
 
 Next steps:
 
-- Grid to create assocations between squares and neighbours on intialisation
 - DI in grid? pass Square(Blank) as content_type?
 
 - Gameplay

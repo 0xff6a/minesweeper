@@ -41,7 +41,7 @@ Grid.prototype.getSquareNeighbours = function(row, col) {
       var n_row = row + row_shift,
           n_col = col + col_shift;
 
-      if ( grid.isValidRef(n_row, n_col) &&  grid.isNonZeroShift(row_shift, col_shift) ) {
+      if ( grid.isOnGrid(n_row, n_col) &&  grid.isNonZeroShift(row_shift, col_shift) ) {
         neighbours.push(grid.squares[n_row][n_col]); 
       }
     });
@@ -50,12 +50,12 @@ Grid.prototype.getSquareNeighbours = function(row, col) {
   return neighbours;
 };
 
-Grid.prototype.isValidRef = function(row, col) {
+Grid.prototype.isOnGrid = function(row, col) {
   return (row >= 0 && row < this.size && col >= 0 && col < this.size);
 };
 
 Grid.prototype.isNonZeroShift = function(row_shift, col_shift) {
-  return !(row_shift === 0 && col_shift === 0)
+  return !(row_shift === 0 && col_shift === 0);
 };
 
 
